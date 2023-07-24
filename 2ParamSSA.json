@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "bicep",
+      "version": "0.9.1.41621",
+      "templateHash": "1697818323633621987"
+    }
+  },
+  "parameters": {
+    "location": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "accesstier": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2021-09-01",
+      "name": "bicepstroagedemo845",
+      "kind": "[parameters('kind')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "properties": {
+        "accessTier": "[parameters('accesstier')]"
+      }
+    }
+  ]
+}
